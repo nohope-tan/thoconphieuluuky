@@ -126,6 +126,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Fin"))
+        {
+            // Cập nhật vị trí hồi sinh thành vị trí của checkpoint "Fin"
+            spawnPoint.position = collision.transform.position;
+            Debug.Log("Checkpoint saved at: " + spawnPoint.position);
+
+            // Tắt Collider của cột mốc này đi để không va chạm và lưu lại nhiều lần nữa
+            collision.enabled = false;
+        }
+    }
+
     void UpdateAnimations()
     {
         if (isGrounded)
