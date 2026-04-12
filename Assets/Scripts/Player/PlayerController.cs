@@ -57,11 +57,6 @@ public class PlayerController : MonoBehaviour
         CheckGrounded();
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        // 2. Tối ưu nhảy (nhảy thấp/cao tùy thời gian giữ nút)
-        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
-        }
 
         FlipCharacter();
 
@@ -72,10 +67,18 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump")) jumpBufferCounter = jumpBufferTime;
         else jumpBufferCounter -= Time.deltaTime;
 
-        // 4. Nhảy 2 lần
+        // 4. Nhảy 2 lần (1 lần dưới đất + 1 lần trên không)
         if (jumpBufferCounter > 0f && (coyoteTimeCounter > 0f || jumpCount < 2))
         {
-            Jump();
+            // Nếu dùng coyote time (lần nhảy đầu), không tính vào jumpCount
+            if (coyoteTimeCounter > 0f && jumpCount == 0)
+            {
+                Jump();
+            }
+            else if (jumpCount < 2)
+            {
+                Jump();
+            }
             jumpBufferCounter = 0f;
             coyoteTimeCounter = 0f;
         }
@@ -85,6 +88,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Điều khiển ngang trực tiếp cả dưới đất lẫn trên không
         rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
     }
 

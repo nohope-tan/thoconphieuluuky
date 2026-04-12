@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpikeTrap : MonoBehaviour
+public class SpikeTrap : BaseSpike
 {
     [Header("Cài đặt tia quét (Raycast)")]
     public float rayDistance = 5f; // Khoảng cách tia đỏ
@@ -75,26 +75,6 @@ public class SpikeTrap : MonoBehaviour
                     returning = false;
                 }
             }
-        }
-    }
-
-    // Xử lý khi Spike chạm vào Player (nếu Spike có Collider dạng Solid)
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-        if (player != null)
-        {
-            player.Respawn();
-        }
-    }
-
-    // Xử lý khi Spike chạm vào Player (nếu Spike có Collider dạng Trigger)
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        PlayerController player = collision.GetComponent<PlayerController>();
-        if (player != null)
-        {
-            player.Respawn();
         }
     }
 }

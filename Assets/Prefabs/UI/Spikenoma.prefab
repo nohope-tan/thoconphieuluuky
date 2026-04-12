@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6956988467890804849}
   - component: {fileID: 6275432400149498300}
   - component: {fileID: 8029734818992085386}
+  - component: {fileID: -7905858681928692163}
   m_Layer: 0
   m_Name: Spikenoma
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,3 +143,15 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.5}
       - {x: 0.5, y: -0.5}
   m_UseDelaunayMesh: 1
+--- !u!114 &-7905858681928692163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5321067855602575253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea27059958d4e3e4885e8b5044449109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BaseSpike
