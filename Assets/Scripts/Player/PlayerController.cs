@@ -3,11 +3,15 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(AudioSource))]
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed = 7f;
     public float jumpForce = 14f;
+
+    [Header("Audio")]
+    public AudioClip jumpSound;
 
     [Header("Ground Check")]
     public Transform groundCheck;
@@ -27,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
     private float horizontalInput;
     private bool isGrounded;
     private string currentState;
@@ -36,6 +41,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
 
         // Nếu quên gán spawnPoint, lấy vị trí lúc Start làm điểm hồi sinh
         if (spawnPoint == null)
@@ -103,6 +109,12 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         jumpCount++;
         isGrounded = false;
+
+        // Phát âm thanh nhảy
+        if (audioSource != null && jumpSound != null)
+        {
+            audioSource.PlayOneShot(jumpSound);
+        }
     }
 
     void FlipCharacter()
