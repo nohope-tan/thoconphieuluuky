@@ -175,5 +175,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Coin
   coinType: 0
-  collectEffectPrefab: {fileID: 6351734753063070750}
+  collectEffectPrefab: {fileID: 0}
   collectSound: {fileID: 0}
