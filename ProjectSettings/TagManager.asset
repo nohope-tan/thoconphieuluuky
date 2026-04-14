@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - Spike
   - Fin
+  - "coin-\u0111\u1ED3ng"
+  - "Coin1-b\u1EA1c"
+  - "Coin2-v\xE0ng"
   layers:
   - Default
   - TransparentFX
