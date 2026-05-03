@@ -74,19 +74,21 @@ public class PlayerController : MonoBehaviour
         else jumpBufferCounter -= Time.deltaTime;
 
         // 4. Nhảy 2 lần (1 lần dưới đất + 1 lần trên không)
-        if (jumpBufferCounter > 0f && (coyoteTimeCounter > 0f || jumpCount < 2))
+        if (jumpBufferCounter > 0f)
         {
-            // Nếu dùng coyote time (lần nhảy đầu), không tính vào jumpCount
-            if (coyoteTimeCounter > 0f && jumpCount == 0)
+            if (coyoteTimeCounter > 0f) // Nhảy lần đầu (từ mặt đất hoặc Coyote Time)
             {
                 Jump();
+                jumpCount = 1; // Đảm bảo tính là đã nhảy lần 1
+                jumpBufferCounter = 0f;
+                coyoteTimeCounter = 0f;
             }
-            else if (jumpCount < 2)
+            else if (jumpCount < 2) // Nhảy lần 2 (nhảy trên không)
             {
                 Jump();
+                jumpCount = 2; // Đánh dấu đã hết lượt nhảy (phải chạm đất mới reset)
+                jumpBufferCounter = 0f;
             }
-            jumpBufferCounter = 0f;
-            coyoteTimeCounter = 0f;
         }
 
         UpdateAnimations();
