@@ -11,6 +11,7 @@ TagManager:
   - "coin-\u0111\u1ED3ng"
   - "Coin1-b\u1EA1c"
   - "Coin2-v\xE0ng"
+  - carot
   layers:
   - Default
   - TransparentFX

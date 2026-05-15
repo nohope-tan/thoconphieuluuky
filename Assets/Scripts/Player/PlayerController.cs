@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private int jumpCount;
 
     [Header("Respawn & Death")]
-    public Transform spawnPoint; // Kéo Empty Object làm điểm hồi sinh vào đây
+    public Transform spawnPoint;
     public float fallDeathY = -10f;
 
     private Rigidbody2D rb;
@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
 
-        // Nếu quên gán spawnPoint, lấy vị trí lúc Start làm điểm hồi sinh
         if (spawnPoint == null)
         {
             GameObject go = new GameObject("DefaultSpawnPoint");
@@ -54,39 +53,31 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // 1. Kiểm tra rơi vực
-        if (transform.position.y <= fallDeathY)
-        {
-            Respawn();
-        }
+        if (transform.position.y <= fallDeathY) Respawn();
 
         CheckGrounded();
         horizontalInput = Input.GetAxisRaw("Horizontal");
-
-
         FlipCharacter();
 
-        // 3. Coyote Time & Jump Buffer
         if (isGrounded) coyoteTimeCounter = coyoteTime;
         else coyoteTimeCounter -= Time.deltaTime;
 
         if (Input.GetButtonDown("Jump")) jumpBufferCounter = jumpBufferTime;
         else jumpBufferCounter -= Time.deltaTime;
 
-        // 4. Nhảy 2 lần (1 lần dưới đất + 1 lần trên không)
         if (jumpBufferCounter > 0f)
         {
-            if (coyoteTimeCounter > 0f) // Nhảy lần đầu (từ mặt đất hoặc Coyote Time)
+            if (coyoteTimeCounter > 0f)
             {
                 Jump();
-                jumpCount = 1; // Đảm bảo tính là đã nhảy lần 1
+                jumpCount = 1;
                 jumpBufferCounter = 0f;
                 coyoteTimeCounter = 0f;
             }
-            else if (jumpCount < 2) // Nhảy lần 2 (nhảy trên không)
+            else if (jumpCount < 2)
             {
                 Jump();
-                jumpCount = 2; // Đánh dấu đã hết lượt nhảy (phải chạm đất mới reset)
+                jumpCount = 2;
                 jumpBufferCounter = 0f;
             }
         }
@@ -96,7 +87,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Điều khiển ngang trực tiếp cả dưới đất lẫn trên không
         rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
     }
 
@@ -112,7 +102,6 @@ public class PlayerController : MonoBehaviour
         jumpCount++;
         isGrounded = false;
 
-        // Phát âm thanh nhảy
         if (audioSource != null && jumpSound != null)
         {
             audioSource.PlayOneShot(jumpSound);
@@ -128,27 +117,19 @@ public class PlayerController : MonoBehaviour
     public void Respawn()
     {
         transform.position = spawnPoint.position;
-        rb.linearVelocity = Vector2.zero; // Xóa lực quán tính để không bị trượt khi hồi sinh
-        Debug.Log("Player Respawned!");
+        rb.linearVelocity = Vector2.zero;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Respawn();
-        }
+        if (collision.gameObject.CompareTag("Enemy")) Respawn();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Fin"))
         {
-            // Cập nhật vị trí hồi sinh thành vị trí của checkpoint "Fin"
             spawnPoint.position = collision.transform.position;
-            Debug.Log("Checkpoint saved at: " + spawnPoint.position);
-
-            // Tắt Collider của cột mốc này đi để không va chạm và lưu lại nhiều lần nữa
             collision.enabled = false;
         }
     }

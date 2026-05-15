@@ -16,3 +16,8 @@ UserSettings/
 
 .DS_Store
 Thumbs.db
+
+# Visual Studio / MonoDevelop generated files
+[Vv]s/
+.vs/
+[Oo]bj/
