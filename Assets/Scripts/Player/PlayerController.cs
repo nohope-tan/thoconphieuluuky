@@ -1,4 +1,7 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
@@ -28,6 +31,20 @@ public class PlayerController : MonoBehaviour
     public Transform spawnPoint;
     public float fallDeathY = -10f;
 
+    [Header("Health & Lives")]
+    public int maxLives = 3;
+    private int currentLives;
+
+    [Header("UI References")]
+    [Tooltip("Thả TextMeshPro hiển thị số máu vào đây")]
+    public TextMeshProUGUI livesText;
+    [Tooltip("Thả UI Text (Legacy) hiển thị số máu vào đây (nếu dùng Text thường)")]
+    public Text legacyLivesText;
+    [Tooltip("Thả Panel Game Over vào đây")]
+    public GameObject gameOverPanel;
+    [Tooltip("Thả Panel Win vào đây")]
+    public GameObject winPanel;
+
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -49,11 +66,22 @@ public class PlayerController : MonoBehaviour
             go.transform.position = transform.position;
             spawnPoint = go.transform;
         }
+
+        currentLives = maxLives;
+        UpdateLivesUI();
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+        }
+        if (winPanel != null)
+        {
+            winPanel.SetActive(false);
+        }
     }
 
     void Update()
     {
-        if (transform.position.y <= fallDeathY) Respawn();
+        if (transform.position.y <= fallDeathY) TakeDamage();
 
         CheckGrounded();
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -120,9 +148,56 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
     }
 
+    public void TakeDamage()
+    {
+        if (currentLives <= 0) return;
+
+        currentLives--;
+        UpdateLivesUI();
+
+        if (currentLives <= 0)
+        {
+            GameOver();
+        }
+        else
+        {
+            Respawn();
+        }
+    }
+
+    private void GameOver()
+    {
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(true);
+        }
+
+        rb.linearVelocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Static;
+        this.enabled = false;
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void UpdateLivesUI()
+    {
+        if (livesText != null)
+        {
+            livesText.text = currentLives.ToString();
+        }
+        if (legacyLivesText != null)
+        {
+            legacyLivesText.text = currentLives.ToString();
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy")) Respawn();
+        if (collision.gameObject.CompareTag("Enemy")) TakeDamage();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -132,6 +207,22 @@ public class PlayerController : MonoBehaviour
             spawnPoint.position = collision.transform.position;
             collision.enabled = false;
         }
+        else if (collision.CompareTag("carot") || collision.CompareTag("Carot"))
+        {
+            WinGame();
+        }
+    }
+
+    private void WinGame()
+    {
+        if (winPanel != null)
+        {
+            winPanel.SetActive(true);
+        }
+
+        rb.linearVelocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Static;
+        this.enabled = false;
     }
 
     void UpdateAnimations()

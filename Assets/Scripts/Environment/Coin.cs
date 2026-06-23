@@ -1,11 +1,11 @@
 using UnityEngine;
 
-/// <summary>
-/// Gắn vào từng Coin GameObject.
-/// Yêu cầu: Collider2D ở chế độ IsTrigger = true.
-/// Tag của GameObject phải khớp với một trong:
-///   "coin-đồng" | "Coin1-bạc" | "Coin2-vàng"
-/// </summary>
+
+
+
+
+
+
 [RequireComponent(typeof(Collider2D))]
 public class Coin : MonoBehaviour
 {
@@ -24,7 +24,7 @@ public class Coin : MonoBehaviour
 
     void Start()
     {
-        // Tự động gán CoinType dựa theo Tag để tránh sai sót
+        
         switch (gameObject.tag)
         {
             case "coin-đồng":
@@ -42,7 +42,7 @@ public class Coin : MonoBehaviour
                 break;
         }
 
-        // Đảm bảo Collider là trigger
+        
         GetComponent<Collider2D>().isTrigger = true;
     }
 
@@ -50,32 +50,33 @@ public class Coin : MonoBehaviour
     {
         if (collected) return;
         
-        // Nhận diện Player (có thể thông qua PlayerController hoặc Tag Player)
+        
         if (other.GetComponent<PlayerController>() != null || other.CompareTag("Player"))
         {
-            collected = true; // Khóa lại ngay lập tức
+            collected = true; 
             Collect();
         }
     }
 
     void Collect()
     {
-        // Cộng điểm
+        
         if (ScoreManager.Instance != null)
             ScoreManager.Instance.AddCoin(coinType);
 
-        // Phát effect và âm thanh (nếu có)
+        
         if (collectEffectPrefab != null) Instantiate(collectEffectPrefab, transform.position, Quaternion.identity);
         if (collectSound != null) AudioSource.PlayClipAtPoint(collectSound, transform.position);
 
-        // TẮT NGAY LẬP TỨC ĐỂ TRÁNH VA CHẠM THÊM VÀ BIẾN MẤT KHỎI MÀN HÌNH
+        
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if (sr != null) sr.enabled = false;
         
         Collider2D col = GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
 
-        // Xóa hoàn toàn vật thể
+        
         Destroy(gameObject);
     }
 }
+

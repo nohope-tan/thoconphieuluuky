@@ -1,96 +1,1085 @@
-<mxfile host="Electron" modified="2024-04-10T00:00:00.000Z" agent="Mozilla/5.0" etag="test" version="21.0.0" type="device">
-  <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+<mxfile host="Electron" modified="2026-06-23T07:00:00.000Z" agent="Mozilla/5.0" etag="hierarchical-usecase-v2" version="21.0.0" type="device">
+
+  <!-- ================================================================== -->
+  <!-- TRANG 1: SƠ ĐỒ USE CASE MỨC ĐỈNH                                  -->
+  <!-- ================================================================== -->
+  <diagram id="Page_TopLevel" name="📋 Mức Đỉnh – Tổng Quan">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        
-        <!-- System Box -->
-        <mxCell id="system_box" value="Hệ Thống Trò Chơi (Game System)" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="250" y="50" width="350" height="600" as="geometry" />
+
+        <!-- TITLE -->
+        <mxCell id="tl_title" value="SƠ ĐỒ USE CASE MỨC ĐỈNH – Thỏ Con Phiêu Lưu Ký" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="1050" height="40" as="geometry" />
         </mxCell>
 
-        <!-- Player Actor -->
-        <mxCell id="actor_player" value="Người chơi" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="100" y="270" width="30" height="60" as="geometry" />
+        <!-- ===== ACTORS ===== -->
+        <!-- Người chơi -->
+        <mxCell id="tl_player" value="Người chơi" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="50" height="100" as="geometry" />
         </mxCell>
 
-        <!-- System Actor -->
-        <mxCell id="actor_system" value="Hệ thống ngầm" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
-          <mxGeometry x="680" y="440" width="30" height="60" as="geometry" />
+        <!-- Hệ thống -->
+        <mxCell id="tl_system" value="Hệ thống ngầm" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1540" y="320" width="50" height="100" as="geometry" />
         </mxCell>
 
-        <!-- Use Cases -->
-        <mxCell id="uc_start" value="Bắt đầu Game" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="365" y="100" width="120" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="uc_move" value="Di chuyển" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="365" y="180" width="120" height="50" as="geometry" />
+        <!-- Ad Network -->
+        <mxCell id="tl_ads" value="Ad Network" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1540" y="700" width="50" height="100" as="geometry" />
         </mxCell>
 
-        <mxCell id="uc_jump" value="Nhảy (Jump)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="365" y="260" width="120" height="50" as="geometry" />
+        <!-- ===== SYSTEM BOUNDARY ===== -->
+        <mxCell id="tl_boundary" value="Hệ Thống Trò Chơi – Thỏ Con Phiêu Lưu Ký" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#f5f5f5;strokeColor=#333333;fontStyle=1;fontSize=15;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="70" width="1330" height="1050" as="geometry" />
         </mxCell>
 
-        <mxCell id="uc_pause" value="Tạm dừng" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="365" y="340" width="120" height="50" as="geometry" />
+        <!-- ===== USE CASES MỨC ĐỈNH ===== -->
+        <!-- UC1: Menu & Điều Hướng -->
+        <mxCell id="tl_uc1" value="UC1: Menu &amp; Điều Hướng" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="120" width="220" height="60" as="geometry" />
         </mxCell>
-        
-        <mxCell id="uc_hit" value="Va chạm Bẫy" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
-          <mxGeometry x="365" y="450" width="120" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="uc_respawn" value="Chết &amp; Hồi sinh" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="365" y="550" width="120" height="50" as="geometry" />
-        </mxCell>
-        
-        <!-- Edges: Player -> Use Cases -->
-        <mxCell id="edge_p1" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_player" target="uc_start">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="edge_p2" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_player" target="uc_move">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="edge_p3" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_player" target="uc_jump">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="edge_p4" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_player" target="uc_pause">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        <mxCell id="tl_note1" value="[Chi tiết → Trang 2]" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#6c8ebf;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="260" y="183" width="200" height="18" as="geometry" />
         </mxCell>
 
-        <!-- Edges: System -> Use Cases -->
-        <mxCell id="edge_s1" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_system" target="uc_hit">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        <!-- UC2: Gameplay Cốt Lõi -->
+        <mxCell id="tl_uc2" value="UC2: Gameplay Cốt Lõi" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="310" width="220" height="60" as="geometry" />
         </mxCell>
-        
-        <mxCell id="edge_s2" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_system" target="uc_respawn">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        <mxCell id="tl_note2" value="[Chi tiết → Trang 3]" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#82b366;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="260" y="373" width="200" height="18" as="geometry" />
         </mxCell>
 
-        <!-- Include / Extend Connections -->
-        <!-- Move Include Hit -->
-        <!-- Start Point is bottom of move. End Point is top of hit -->
-        <mxCell id="edge_inc1" value="&amp;lt;include&amp;gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="uc_move" target="uc_hit">
-          <mxGeometry x="0.1" y="-10" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
+        <!-- UC3: Chiến Đấu & Nguy Hiểm -->
+        <mxCell id="tl_uc3" value="UC3: Chiến Đấu &amp; Nguy Hiểm" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="510" width="220" height="60" as="geometry" />
         </mxCell>
-        
-        <!-- Jump Include Hit -->
-        <mxCell id="edge_inc2" value="&amp;lt;include&amp;gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="uc_jump" target="uc_hit">
+        <mxCell id="tl_note3" value="[Chi tiết → Trang 4]" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#b85450;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="260" y="573" width="200" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- UC4: Buff & Power-Up -->
+        <mxCell id="tl_uc4" value="UC4: Buff &amp; Power-Up" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="710" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tl_note4" value="[Chi tiết → Trang 5]" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#d6b656;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="260" y="773" width="200" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- UC5: Shop & Kinh Tế -->
+        <mxCell id="tl_uc5" value="UC5: Shop &amp; Kinh Tế" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#9c27b0;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="900" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tl_note5" value="[Chi tiết → Trang 6]" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#9c27b0;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="260" y="963" width="200" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- UC6: Quảng Cáo -->
+        <mxCell id="tl_uc6" value="UC6: Quảng Cáo (Ads)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#388e3c;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="120" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tl_note6" value="[Chi tiết → Trang 7]" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#388e3c;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="760" y="183" width="200" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- UC7: HUD & Giao Diện In-Game -->
+        <mxCell id="tl_uc7" value="UC7: HUD &amp; Giao Diện In-Game" style="ellipse;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="310" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tl_note7" value="[Chi tiết → Trang 8]" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#1976d2;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="760" y="373" width="200" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- UC8: Tiến Trình & Lưu Trữ -->
+        <mxCell id="tl_uc8" value="UC8: Tiến Trình &amp; Lưu Trữ" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="510" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tl_note8" value="[Chi tiết → Trang 9]" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#e65100;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="760" y="573" width="200" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- UC9: Âm Thanh -->
+        <mxCell id="tl_uc9" value="UC9: Hệ Thống Âm Thanh" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#c2185b;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="710" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- UC10: Dữ Liệu Map -->
+        <mxCell id="tl_uc10" value="UC10: Dữ Liệu Map" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c5cae9;strokeColor=#3f51b5;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="900" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== EDGES: Người chơi → Use Cases ===== -->
+        <mxCell id="e_p1" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="tl_player" target="tl_uc1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
-        <!-- Hit Extend Respawn -->
-        <!-- Reverse arrow direction for Extend -> Points from Respawn to Hit -->
-        <mxCell id="edge_ext1" value="&amp;lt;extend&amp;gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="uc_respawn" target="uc_hit">
+        <mxCell id="e_p2" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="tl_player" target="tl_uc2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="e_p3" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="tl_player" target="tl_uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_p4" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="tl_player" target="tl_uc4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_p5" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="tl_player" target="tl_uc5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_p6" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="tl_player" target="tl_uc6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_p7" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="tl_player" target="tl_uc7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Hệ thống ngầm → Use Cases -->
+        <mxCell id="e_s3" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="tl_system" target="tl_uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_s8" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="tl_system" target="tl_uc8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_s10" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="tl_system" target="tl_uc10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_s9" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="tl_system" target="tl_uc9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Ad Network → Quảng Cáo -->
+        <mxCell id="e_a6" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="tl_ads" target="tl_uc6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- include giữa các UC cấp cao -->
+        <mxCell id="e_inc_2_3" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="tl_uc2" target="tl_uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_inc_2_4" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="tl_uc2" target="tl_uc4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_inc_5_6" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="tl_uc5" target="tl_uc6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_inc_3_8" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="tl_uc3" target="tl_uc8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_inc_2_8" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="tl_uc2" target="tl_uc8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
       </root>
     </mxGraphModel>
   </diagram>
+
+  <!-- ================================================================== -->
+  <!-- TRANG 2: PHÂN RÃ UC1 – MENU & ĐIỀU HƯỚNG                           -->
+  <!-- ================================================================== -->
+  <diagram id="Page_UC1_Menu" name="📌 UC1 – Menu &amp; Điều Hướng">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TITLE -->
+        <mxCell id="m_title" value="UC1: PHÂN RÃ – Menu &amp; Điều Hướng" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="200" y="15" width="760" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Actor -->
+        <mxCell id="m_player" value="Người chơi" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="330" width="45" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Boundary -->
+        <mxCell id="m_boundary" value="UC1: Menu &amp; Điều Hướng" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#e1f0ff;strokeColor=#4472c4;fontStyle=1;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="60" width="980" height="730" as="geometry" />
+        </mxCell>
+
+        <!-- Use Cases -->
+        <mxCell id="m_uc_open" value="Mở Game / Khởi động" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="110" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="m_uc_mainmenu" value="Xem Main Menu" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="110" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="m_uc_selectlevel" value="Chọn Cấp Độ (Level Select)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="220" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="m_uc_settings" value="Xem &amp; Chỉnh Cài Đặt" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="220" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="m_uc_leaderboard" value="Xem Bảng Xếp Hạng" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="330" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="m_uc_quit" value="Thoát Game" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="330" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Settings phân rã -->
+        <mxCell id="m_uc_bgm" value="Bật / Tắt Nhạc Nền (BGM)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="185" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m_uc_sfx" value="Bật / Tắt SFX" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="250" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m_uc_lang" value="Đổi Ngôn Ngữ" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="315" width="180" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Level Select phân rã -->
+        <mxCell id="m_uc_locklevel" value="Hiển Thị Cấp Độ Bị Khóa" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1f0ff;strokeColor=#4472c4;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="200" y="430" width="190" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m_uc_unlockcheck" value="Kiểm Tra Điều Kiện Mở Khóa" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1f0ff;strokeColor=#4472c4;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="420" y="430" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Edges: player → UCs -->
+        <mxCell id="em_p_open" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="m_player" target="m_uc_open">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="em_p_mainmenu" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="m_player" target="m_uc_mainmenu">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="em_p_selectlevel" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="m_player" target="m_uc_selectlevel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="em_p_settings" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="m_player" target="m_uc_settings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="em_p_leader" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="m_player" target="m_uc_leaderboard">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="em_p_quit" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="m_player" target="m_uc_quit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Open → include MainMenu -->
+        <mxCell id="em_open_main" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="m_uc_open" target="m_uc_mainmenu">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Settings → include sub-UCs -->
+        <mxCell id="em_set_bgm" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="m_uc_settings" target="m_uc_bgm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="em_set_sfx" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="m_uc_settings" target="m_uc_sfx">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="em_set_lang" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="m_uc_settings" target="m_uc_lang">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SelectLevel → include sub-UCs -->
+        <mxCell id="em_sel_lock" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="m_uc_selectlevel" target="m_uc_locklevel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="em_sel_check" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="m_uc_selectlevel" target="m_uc_unlockcheck">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ================================================================== -->
+  <!-- TRANG 3: PHÂN RÃ UC2 – GAMEPLAY CỐT LÕI                            -->
+  <!-- ================================================================== -->
+  <diagram id="Page_UC2_Gameplay" name="📌 UC2 – Gameplay Cốt Lõi">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="g_title" value="UC2: PHÂN RÃ – Gameplay Cốt Lõi" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="200" y="15" width="760" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Actor -->
+        <mxCell id="g_player" value="Người chơi" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="35" y="360" width="45" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="g_system" value="Hệ thống ngầm" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="360" width="45" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Boundary -->
+        <mxCell id="g_boundary" value="UC2: Gameplay Cốt Lõi" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#e8f5e9;strokeColor=#388e3c;fontStyle=1;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="60" width="940" height="730" as="geometry" />
+        </mxCell>
+
+        <!-- Main UCs -->
+        <mxCell id="g_uc_start" value="Bắt Đầu Ải (Stage)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="110" width="190" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="g_uc_move" value="Di Chuyển (Trái/Phải)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="210" width="190" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="g_uc_jump" value="Nhảy (Jump)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="310" width="190" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="g_uc_collect" value="Thu Thập Vật Phẩm" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="420" width="190" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="g_uc_checkpoint" value="Đạt Checkpoint (Cờ)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="530" width="190" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="g_uc_pause" value="Tạm Dừng (Pause)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="640" width="190" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Jump phân rã -->
+        <mxCell id="g_uc_doublejump" value="Nhảy Đôi (Double Jump)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#4caf50;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="270" width="180" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="g_uc_coyote" value="Coyote Time (0.2s)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#4caf50;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="330" width="180" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="g_uc_buffer" value="Jump Buffer (0.2s)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#4caf50;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="390" width="180" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- Collect phân rã -->
+        <mxCell id="g_uc_carrot" value="Thu Thập Cà Rốt" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#4caf50;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="430" width="175" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="g_uc_coin" value="Thu Thập Đồng Tiền" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#4caf50;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="490" width="175" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- Pause phân rã -->
+        <mxCell id="g_uc_resume" value="Tiếp Tục (Resume)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#4caf50;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="615" width="175" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="g_uc_restart" value="Bắt Đầu Lại Ải" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#4caf50;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="675" width="175" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- Hoàn Thành -->
+        <mxCell id="g_uc_complete_stage" value="Hoàn Thành Ải" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a5d6a7;strokeColor=#388e3c;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="110" width="185" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="g_uc_complete_level" value="Hoàn Thành Cấp Độ" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a5d6a7;strokeColor=#388e3c;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="205" width="185" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- AutoSave -->
+        <mxCell id="g_uc_autosave" value="Auto-Save Tiến Trình" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="330" width="185" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="g_uc_minimap" value="Xem Mini-Map" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="430" width="185" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Edges player → UCs -->
+        <mxCell id="eg_p_start" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="g_player" target="g_uc_start">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg_p_move" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="g_player" target="g_uc_move">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg_p_jump" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="g_player" target="g_uc_jump">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg_p_collect" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="g_player" target="g_uc_collect">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg_p_pause" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="g_player" target="g_uc_pause">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg_p_minimap" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="g_player" target="g_uc_minimap">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- System → autosave -->
+        <mxCell id="eg_s_autosave" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="g_system" target="g_uc_autosave">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Phân rã: Jump -->
+        <mxCell id="eg_j_dbl" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="g_uc_jump" target="g_uc_doublejump">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg_j_coy" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="g_uc_jump" target="g_uc_coyote">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg_j_buf" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="g_uc_jump" target="g_uc_buffer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Phân rã: Collect -->
+        <mxCell id="eg_c_carrot" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="g_uc_collect" target="g_uc_carrot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg_c_coin" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="g_uc_collect" target="g_uc_coin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Phân rã: Pause -->
+        <mxCell id="eg_p_res" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="g_uc_pause" target="g_uc_resume">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg_p_rst" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="g_uc_pause" target="g_uc_restart">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Start → include Hoàn thành -->
+        <mxCell id="eg_s_cs" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="g_uc_start" target="g_uc_complete_stage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg_cs_cl" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="g_uc_complete_stage" target="g_uc_complete_level">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ================================================================== -->
+  <!-- TRANG 4: PHÂN RÃ UC3 – CHIẾN ĐẤU & NGUY HIỂM                       -->
+  <!-- ================================================================== -->
+  <diagram id="Page_UC3_Combat" name="📌 UC3 – Chiến Đấu &amp; Nguy Hiểm">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="c_title" value="UC3: PHÂN RÃ – Chiến Đấu &amp; Nguy Hiểm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="200" y="15" width="760" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Actors -->
+        <mxCell id="c_player" value="Người chơi" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="35" y="330" width="45" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c_system" value="Hệ thống ngầm" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="180" width="45" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ads" value="Ad Network" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="550" width="45" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Boundary -->
+        <mxCell id="c_boundary" value="UC3: Chiến Đấu &amp; Nguy Hiểm" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#fce4ec;strokeColor=#c62828;fontStyle=1;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="60" width="940" height="730" as="geometry" />
+        </mxCell>
+
+        <!-- Main hazard UCs -->
+        <mxCell id="c_uc_hit_spike" value="Va Chạm Bẫy Chông (Spike)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="190" y="110" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="c_uc_hit_enemy" value="Va Chạm Kẻ Địch" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="190" y="210" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="c_uc_take_dmg" value="Nhận Sát Thương / Mất Máu" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="190" y="310" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="c_uc_die" value="Nhân Vật Chết" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="190" y="430" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Die extend -->
+        <mxCell id="c_uc_respawn_cp" value="Hồi Sinh Tại Checkpoint" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="190" y="545" width="195" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c_uc_respawn_ad" value="Hồi Sinh Ngay (Xem Quảng Cáo)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="190" y="615" width="195" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c_uc_gameover" value="Game Over" style="ellipse;whiteSpace=wrap;html=1;fillColor=#b85450;strokeColor=#6d1f00;fontColor=#ffffff;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="190" y="690" width="195" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Enemy AI phân rã -->
+        <mxCell id="c_uc_patrol" value="Kẻ Địch Tuần Tra (Patrol)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="175" width="185" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c_uc_chase" value="Kẻ Địch Đuổi (Chase)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="240" width="185" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Boss Fight sub-boundary -->
+        <mxCell id="c_sub_boss" value="Boss Fight – Đại Ca" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#f9dde5;strokeColor=#9c1a1a;fontStyle=1;fontSize=11;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="430" width="580" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="c_uc_boss" value="Chiến Đấu Boss (Đại Ca)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="465" width="185" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="c_uc_boss_p1" value="Pha 1: Đuổi (Chase)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="680" y="460" width="155" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="c_uc_boss_p2" value="Pha 2: Bẫy Chông Liên Tục" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="680" y="520" width="155" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="c_uc_boss_win" value="Đánh Bại Boss" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a5d6a7;strokeColor=#388e3c;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="560" y="590" width="175" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="ec_p_spike" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="c_player" target="c_uc_hit_spike">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec_p_enemy" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="c_player" target="c_uc_hit_enemy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec_p_die" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="c_player" target="c_uc_die">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec_sys_patrol" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="c_system" target="c_uc_patrol">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec_ads_respawn" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="c_ads" target="c_uc_respawn_ad">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ec_spike_dmg" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="c_uc_hit_spike" target="c_uc_take_dmg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec_enemy_dmg" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="c_uc_hit_enemy" target="c_uc_take_dmg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec_dmg_die" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="c_uc_take_dmg" target="c_uc_die">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec_die_cp" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="c_uc_die" target="c_uc_respawn_cp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec_die_ad" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="c_uc_die" target="c_uc_respawn_ad">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec_die_go" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="c_uc_die" target="c_uc_gameover">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec_patrol_chase" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="c_uc_patrol" target="c_uc_chase">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec_boss_p1" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="c_uc_boss" target="c_uc_boss_p1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec_boss_p2" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="c_uc_boss" target="c_uc_boss_p2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec_boss_win" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="c_uc_boss" target="c_uc_boss_win">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ================================================================== -->
+  <!-- TRANG 5: PHÂN RÃ UC4 – BUFF & POWER-UP                              -->
+  <!-- ================================================================== -->
+  <diagram id="Page_UC4_Buff" name="📌 UC4 – Buff &amp; Power-Up">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="b_title" value="UC4: PHÂN RÃ – Buff &amp; Power-Up" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="200" y="15" width="760" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b_player" value="Người chơi" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="35" y="300" width="45" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b_system" value="Hệ thống ngầm" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="400" width="45" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b_boundary" value="UC4: Buff &amp; Power-Up" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#fff8e1;strokeColor=#f57c00;fontStyle=1;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="60" width="940" height="730" as="geometry" />
+        </mxCell>
+
+        <!-- Main UCs -->
+        <mxCell id="b_uc_pickup" value="Nhặt Buff Trên Map" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="190" y="120" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="b_uc_use" value="Sử Dụng Buff" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="190" y="240" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="b_uc_timer" value="Hết Thời Gian Buff" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="190" y="380" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Use Buff phân rã -->
+        <mxCell id="b_uc_hp" value="Buff +1 Máu" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff8e1;strokeColor=#f57c00;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="195" width="175" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="b_uc_jump" value="Buff +1 Lần Nhảy (Max 2)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff8e1;strokeColor=#f57c00;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="255" width="175" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="b_uc_clear" value="Buff Xóa Mod Địch (10s)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff8e1;strokeColor=#f57c00;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="315" width="175" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- Timer phân rã -->
+        <mxCell id="b_uc_expired" value="Hiển Thị Thông Báo Buff Hết" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff8e1;strokeColor=#f57c00;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="380" width="195" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="b_uc_remove" value="Xóa Hiệu Ứng Buff" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff8e1;strokeColor=#f57c00;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="445" width="195" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="eb_p_pickup" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="b_player" target="b_uc_pickup">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eb_p_use" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="b_player" target="b_uc_use">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eb_sys_timer" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="b_system" target="b_uc_timer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="eb_pickup_use" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="b_uc_pickup" target="b_uc_use">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eb_use_hp" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="b_uc_use" target="b_uc_hp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eb_use_jmp" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="b_uc_use" target="b_uc_jump">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eb_use_clr" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="b_uc_use" target="b_uc_clear">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eb_timer_exp" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="b_uc_timer" target="b_uc_expired">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eb_timer_rem" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="b_uc_timer" target="b_uc_remove">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ================================================================== -->
+  <!-- TRANG 6: PHÂN RÃ UC5 – SHOP & KINH TẾ                               -->
+  <!-- ================================================================== -->
+  <diagram id="Page_UC5_Shop" name="📌 UC5 – Shop &amp; Kinh Tế">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="s_title" value="UC5: PHÂN RÃ – Shop &amp; Kinh Tế" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="200" y="15" width="760" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s_player" value="Người chơi" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="35" y="300" width="45" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s_boundary" value="UC5: Shop &amp; Kinh Tế" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#ede7f6;strokeColor=#7b1fa2;fontStyle=1;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="60" width="980" height="730" as="geometry" />
+        </mxCell>
+
+        <!-- Main UCs -->
+        <mxCell id="s_uc_open" value="Mở Shop" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#9c27b0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="115" width="185" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="s_uc_view" value="Xem Danh Sách Item" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#9c27b0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="215" width="185" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="s_uc_buy_skin" value="Mua Skin (Cosmetic)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#9c27b0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="325" width="185" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="s_uc_buy_buff" value="Mua Buff Item" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#9c27b0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="435" width="185" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Skin phân rã -->
+        <mxCell id="s_uc_preview" value="Xem Preview Skin" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede7f6;strokeColor=#7b1fa2;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="450" y="300" width="180" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="s_uc_check_carrot" value="Kiểm Tra Số Carrot" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede7f6;strokeColor=#7b1fa2;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="450" y="360" width="180" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="s_uc_no_carrot" value="Thông Báo Không Đủ Carrot" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="450" y="420" width="180" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="s_uc_equip" value="Trang Bị Skin" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#9c27b0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="450" y="480" width="180" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- IAP sub-boundary -->
+        <mxCell id="s_sub_iap" value="IAP – Mua Bằng Tiền Thật" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#f3e5f5;strokeColor=#7b1fa2;fontStyle=1;fontSize=11;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="570" width="850" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="s_uc_iap100" value="Mua 100 Carrot" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#9c27b0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="220" y="610" width="155" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="s_uc_iap500" value="Mua 500 Carrot" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#9c27b0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="395" y="610" width="155" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="s_uc_iap1000" value="Mua 1000 Carrot" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#9c27b0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="570" y="610" width="155" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="s_uc_iap_confirm" value="Xác Nhận Thanh Toán" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede7f6;strokeColor=#7b1fa2;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="280" y="675" width="175" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="s_uc_iap_ok" value="Nhận Carrot Sau Mua" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a5d6a7;strokeColor=#388e3c;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="480" y="675" width="175" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="s_uc_iap_fail" value="Thanh Toán Thất Bại" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="680" y="675" width="150" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="es_p_open" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="s_player" target="s_uc_open">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es_p_buy_skin" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="s_player" target="s_uc_buy_skin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es_p_buy_buff" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="s_player" target="s_uc_buy_buff">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es_p_iap" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="s_player" target="s_uc_iap100">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="es_open_view" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="s_uc_open" target="s_uc_view">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es_skin_preview" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="s_uc_buy_skin" target="s_uc_preview">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es_skin_check" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="s_uc_buy_skin" target="s_uc_check_carrot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es_check_no" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="s_uc_check_carrot" target="s_uc_no_carrot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es_skin_equip" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="s_uc_buy_skin" target="s_uc_equip">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es_iap_confirm" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="s_uc_iap100" target="s_uc_iap_confirm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es_iap_ok" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="s_uc_iap_confirm" target="s_uc_iap_ok">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="es_iap_fail" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="s_uc_iap_confirm" target="s_uc_iap_fail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ================================================================== -->
+  <!-- TRANG 7: PHÂN RÃ UC6 – QUẢNG CÁO (ADS)                             -->
+  <!-- ================================================================== -->
+  <diagram id="Page_UC6_Ads" name="📌 UC6 – Quảng Cáo (Ads)">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="a_title" value="UC6: PHÂN RÃ – Quảng Cáo (Ads)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="200" y="15" width="760" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a_player" value="Người chơi" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="35" y="220" width="45" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a_system" value="Hệ thống ngầm" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="35" y="500" width="45" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a_ads" value="Ad Network" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="350" width="45" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a_boundary" value="UC6: Quảng Cáo (Ads)" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#e8f5e9;strokeColor=#2e7d32;fontStyle=1;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="60" width="940" height="730" as="geometry" />
+        </mxCell>
+
+        <!-- Rewarded Ad -->
+        <mxCell id="a_uc_rewarded" value="Xem Rewarded Ad" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#388e3c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="120" width="195" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="a_uc_ad_revive" value="Nhận Hồi Sinh (từ Ad)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="100" width="180" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="a_uc_ad_carrot" value="Nhận Carrot (từ Ad)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="160" width="180" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- Interstitial -->
+        <mxCell id="a_uc_interstitial" value="Hiển Thị Interstitial Ad" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#388e3c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="330" width="195" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="a_uc_skip" value="Bỏ Qua Quảng Cáo" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="315" width="180" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="a_uc_close" value="Đóng Quảng Cáo" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="375" width="180" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- Error Case -->
+        <mxCell id="a_uc_fail" value="Quảng Cáo Thất Bại / Lỗi" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="445" width="180" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="ea_p_rewarded" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="a_player" target="a_uc_rewarded">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea_sys_inter" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="a_system" target="a_uc_interstitial">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea_ads_r" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="a_ads" target="a_uc_rewarded">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea_ads_i" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="a_ads" target="a_uc_interstitial">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ea_r_revive" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="a_uc_rewarded" target="a_uc_ad_revive">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea_r_carrot" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="a_uc_rewarded" target="a_uc_ad_carrot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea_i_skip" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="a_uc_interstitial" target="a_uc_skip">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea_i_close" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="a_uc_interstitial" target="a_uc_close">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea_r_fail" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="a_uc_rewarded" target="a_uc_fail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ================================================================== -->
+  <!-- TRANG 8: PHÂN RÃ UC7 – HUD & GIAO DIỆN IN-GAME                      -->
+  <!-- ================================================================== -->
+  <diagram id="Page_UC7_HUD" name="📌 UC7 – HUD &amp; Giao Diện In-Game">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="h_title" value="UC7: PHÂN RÃ – HUD &amp; Giao Diện In-Game" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="200" y="15" width="760" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="h_player" value="Người chơi" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="35" y="340" width="45" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="h_system" value="Hệ thống ngầm" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="340" width="45" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="h_boundary" value="UC7: HUD &amp; Giao Diện In-Game" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#e3f2fd;strokeColor=#1565c0;fontStyle=1;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="60" width="940" height="730" as="geometry" />
+        </mxCell>
+
+        <!-- HUD Display UCs -->
+        <mxCell id="h_uc_hp" value="Hiển Thị Thanh Máu (HP)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="115" width="195" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="h_uc_carrot" value="Hiển Thị Số Carrot" style="ellipse;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="215" width="195" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="h_uc_coin" value="Hiển Thị Đồng Tiền" style="ellipse;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="315" width="195" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="h_uc_stageinfo" value="Hiển Thị Thông Tin Ải" style="ellipse;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="415" width="195" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Buttons -->
+        <mxCell id="h_uc_btn_buff" value="Nút 'Mua Buff'" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="530" width="195" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="h_uc_btn_ad" value="Nút 'Xem Quảng Cáo'" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="600" width="195" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="h_uc_btn_pause" value="Nút Pause (Menu)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="670" width="195" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="h_uc_minimap" value="Mini-Map HUD" style="ellipse;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="740" width="195" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Result Screen phân rã -->
+        <mxCell id="h_sub_result" value="Màn Hình Kết Quả (Result Screen)" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#e3f2fd;strokeColor=#1565c0;fontStyle=1;fontSize=11;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="540" width="580" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="h_uc_result" value="Màn Hình Kết Quả (Thắng/Thua)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1976d2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="465" y="580" width="210" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="h_uc_next" value="Nút Next Stage" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="700" y="580" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="h_uc_replay" value="Nút Replay" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="700" y="650" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="h_uc_home" value="Nút Về Main Menu" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="465" y="660" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- HP phân rã -->
+        <mxCell id="h_uc_hp_update" value="Cập Nhật Máu Khi Nhận Damage" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="455" y="100" width="210" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="h_uc_hp_buff" value="Cập Nhật Máu Khi Dùng Buff" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="455" y="160" width="210" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="eh_p_hp" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="h_player" target="h_uc_hp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eh_p_pause" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="h_player" target="h_uc_btn_pause">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eh_p_buff" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="h_player" target="h_uc_btn_buff">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eh_p_ad" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="h_player" target="h_uc_btn_ad">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eh_sys_carrot" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="h_system" target="h_uc_carrot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eh_sys_result" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="h_system" target="h_uc_result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="eh_hp_upd" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="h_uc_hp" target="h_uc_hp_update">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eh_hp_buff" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="h_uc_hp" target="h_uc_hp_buff">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eh_res_next" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="h_uc_result" target="h_uc_next">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eh_res_rep" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="h_uc_result" target="h_uc_replay">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eh_res_home" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="h_uc_result" target="h_uc_home">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- ================================================================== -->
+  <!-- TRANG 9: PHÂN RÃ UC8 – TIẾN TRÌNH & LƯU TRỮ                        -->
+  <!-- ================================================================== -->
+  <diagram id="Page_UC8_Progress" name="📌 UC8 – Tiến Trình &amp; Lưu Trữ">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="pr_title" value="UC8: PHÂN RÃ – Tiến Trình &amp; Lưu Trữ" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="200" y="15" width="760" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pr_player" value="Người chơi" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="35" y="280" width="45" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="pr_system" value="Hệ thống ngầm" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="280" width="45" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pr_boundary" value="UC8: Tiến Trình &amp; Lưu Trữ" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fillColor=#fff3e0;strokeColor=#e65100;fontStyle=1;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="60" width="940" height="730" as="geometry" />
+        </mxCell>
+
+        <!-- Main UCs -->
+        <mxCell id="pr_uc_unlock" value="Mở Khóa Cấp Độ Tiếp Theo" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="120" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="pr_uc_reward" value="Nhận Phần Thưởng (Carrot + Coin)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="220" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="pr_uc_leader" value="Cập Nhật Bảng Xếp Hạng" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="320" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="pr_uc_save" value="Lưu PlayerPrefs" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="420" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="pr_uc_load" value="Load Dữ Liệu Game" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="520" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="pr_uc_reset" value="Xóa Tiến Trình (Reset)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="630" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Reward phân rã -->
+        <mxCell id="pr_uc_carrot_earn" value="Cộng Carrot Vào Tài Khoản" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="455" y="205" width="195" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="pr_uc_coin_earn" value="Cộng Đồng Tiền" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="455" y="265" width="195" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- Achievement / Special -->
+        <mxCell id="pr_uc_speedrun" value="Speedrun (Hoàn thành nhanh)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="455" y="385" width="195" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="pr_uc_maxcoin" value="Thu Thập Tối Đa Đồng Tiền" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="455" y="445" width="195" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="pr_uc_allclear" value="Hoàn Thành 10 Cấp (All Clear)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a5d6a7;strokeColor=#388e3c;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="455" y="545" width="210" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="epr_p_unlock" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="pr_player" target="pr_uc_unlock">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="epr_p_reward" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="pr_player" target="pr_uc_reward">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="epr_p_leader" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="pr_player" target="pr_uc_leader">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="epr_p_reset" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="pr_player" target="pr_uc_reset">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="epr_sys_save" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="pr_system" target="pr_uc_save">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="epr_sys_load" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="pr_system" target="pr_uc_load">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="epr_reward_carrot" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="pr_uc_reward" target="pr_uc_carrot_earn">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="epr_reward_coin" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="pr_uc_reward" target="pr_uc_coin_earn">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="epr_unlock_speed" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="pr_uc_unlock" target="pr_uc_speedrun">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="epr_unlock_max" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="pr_uc_unlock" target="pr_uc_maxcoin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="epr_unlock_all" value="&lt;&lt;extend&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="pr_uc_unlock" target="pr_uc_allclear">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="epr_save_load" value="&lt;&lt;include&gt;&gt;" style="html=1;verticalAlign=top;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=10;" edge="1" parent="1" source="pr_uc_load" target="pr_uc_save">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
 </mxfile>
